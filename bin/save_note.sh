@@ -3,4 +3,5 @@ BASEDIR=$HOME/work/devjournal
 COMMIT_MSG=$(cat)
 
 cd $BASEDIR
-git commit -m $COMMIT_MSG .
+git add .
+git commit -m "$COMMIT_MSG" .
