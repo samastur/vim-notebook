@@ -1,6 +1,10 @@
 #!/bin/bash
-NOTEFILE=$HOME/SparkleShare/devjournal/`hostname`/devjournal.markdown
-FILENAME=`basename $NOTEFILE`
+BASEDIR=$HOME/work/devjournal
+YEARMONTH=`date -j "+%Y/%m"`
+NOTEFILE=$YEARMONTH/journal.md
+
 VIMCOMMAND="call Note_add()"
 
-wmctrl -a $FILENAME || gvim -c"$VIMCOMMAND" "$NOTEFILE" -c"$" 
+cd $BASEDIR
+mkdir -p $YEARMONTH
+/usr/local/bin/gvim -c"$VIMCOMMAND" "$NOTEFILE" -c"$"
